@@ -15,7 +15,7 @@ export default function App() {
   setLoading(true);
   setError("");
   try {
-    const res = await fetch(`http://localhost:5000/api/weather/city?city=${city}`);
+    const res = await fetch(`https://weather-dashboard-vl15.onrender.com/api/weather/city?city=${city}`);
     const data = await res.json();
     if (!res.ok) throw new Error(data.error);
     setWeather(data);
@@ -35,7 +35,7 @@ const fetchByLocation = () => {
     async ({ coords }) => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/weather/coords?lat=${coords.latitude}&lon=${coords.longitude}`
+`https://weather-dashboard-vl15.onrender.com/api/weather/coords?lat=${coords.latitude}&lon=${coords.longitude}`
         );
         const data = await res.json();
         if (!res.ok) throw new Error(data.error);
